@@ -1,0 +1,46 @@
+<% include('../layouts/header.ejs'); %>
+    <%- include('../layouts/style.ejs'); %>
+        <main>
+            <section class="section-container" id="register">
+
+                <div class="container">
+                    <% if(typeof message !=='undefined' ){ %>
+                        <p class="alert-msg" style="color: green">
+                            <%= message%>
+                        </p>
+                        <% } %>
+                    <form id="reg-form" method="POST">
+                        <div class="container-uinfo">
+                            
+                                    <form action="" method="post" enctype="miltipart/form-data">
+                                        <label for="">Nome</label>
+                                        <input type="text" name="name" placeholder="Digite seu Nome" required>
+                                        <label for="">Sobrenome</label>
+                                        <input type="text" name="lastName" placeholder="Digite seu Sobrenome" required>
+                                        <label for="">Data de Nascimento</label>
+                                        <input type="date" name="birthday" placeholder="" required>
+                                        <label for="">Gênero</label>
+                                        <select name="gender" required>
+                                            <option value="Masculino">Masculino</option>
+                                            <option value="Feminino">Feminino</option>
+                                            <option value="Outro">Não informar</option>
+                                        </select>
+                                        <label for="uemail">E-mail</label>
+                                        <input type="email" placeholder="exemplo@email.com" name="email"
+                                            autocomplete="off" required>
+                                        <label for="usenha">Senha</label>
+                                        <input type="password" placeholder="*********" name="password" minlength="6"
+                                            required>
+                                        <input class="btn-style" type="submit" value="Registrar">
+                                    </form>
+
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+
+
+
+        <% include('../layouts/footer.ejs') %>

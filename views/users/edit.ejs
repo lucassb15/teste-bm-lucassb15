@@ -1,0 +1,34 @@
+<% include('../layouts/header.ejs'); %>
+    <%- include('../layouts/style.ejs'); %>
+        <%- include('../layouts/homestyle.ejs'); %>
+
+            <header id="menu">
+                <div class="container">
+                    <h1
+                        style="color: #303030; text-transform: uppercase; letter-spacing: 5px; font-size: 2rem; font-weight: bolder; margin-bottom: 0px;">
+                        Brand<br><span
+                            style="color: #14dbe3; font-size: 1rem; letter-spacing: 8px; font-weight: bolder;">Monitor</span>
+                    </h1>
+                    <div class="navbar">
+                        <ul>
+                            <li><a href="/edit?id=<%=user._id %>">Editar perfil</a> </li>
+                            <li><a href="/userList">Cadastros</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+            </header>
+            <main>
+                
+                <section id="section-edit" class="section-container">
+                    <div id="user-perfil" class="perfil-box">
+                    <h3 >Olá, <%= user.name %> <%= user.lastName %></h3>
+                    </div>
+                    <form action="" method="POST" enctype="multipart/form-data">
+
+
+                    </form>
+                </section>
+            </main>
+            <% include('../layouts/footer.ejs') %>

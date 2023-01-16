@@ -1,0 +1,35 @@
+<% include('../layouts/header.ejs'); %>
+    <%- include('../layouts/style.ejs'); %>
+
+   
+    <%
+    if(typeof message !== 'undefined'){
+        %>
+        <p class="alert-login"><%= message %></p>
+        <%
+    }
+%>
+        <main>
+            <section id="login" class="section-container" >
+               
+                <div class="container">
+                    
+                    <form id="log-form" action="/login" method="post">
+                        <div class="container-uinfo">
+                            <label for="email">E-mail</label>
+                            <input  type="email" placeholder="exemplo@email.com" name="email"
+                                autocomplete="off" required>
+                            <label for="senha">Senha</label>
+                            <input  type="password" placeholder="*********" name="password" required>
+                            <input class="btn-style" type="submit" value="Login">
+                            <div class="register-link">
+                                <p class="subtitle">Não é cadastrado?</p>
+                                <a class="subtitle" href="/register">Criar uma conta</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <% include('../layouts/footer.ejs') %>
