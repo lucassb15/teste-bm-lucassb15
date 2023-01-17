@@ -139,6 +139,24 @@ const editLoad = async (req, res) => {
 
 }
 
+const updateProfile = async (req, res) => {
+
+    try {
+        if(req.file){
+            const userData = await User.findByIdAndUpdate({ _id:req.body._id },{$set:{name: req.body.name,lastName: req.body.lastName,birthday: req.body.birthday,gender: req.body.gender} });
+
+        }
+        else{
+            const userData = await User.findByIdAndUpdate({ _id:req.body._id },{$set:{name: req.body.name,lastName: req.body.lastName,birthday: req.body.birthday,gender: req.body.gender} });
+        }
+        res.redirect('/home');
+
+    } catch (error) {
+        console.log('Error: ',error.message);
+    }
+
+}
+
 module.exports = {
     loadRegister,
     insertUser,
@@ -146,5 +164,6 @@ module.exports = {
     verifyLogin,
     loadHome,
     userLogout,
-    editLoad
+    editLoad,
+    updateProfile
 }

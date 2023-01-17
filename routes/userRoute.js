@@ -39,6 +39,6 @@ user_route.get('/logout',auth.isLogin,userController.userLogout)
 
 user_route.get('/edit',auth.isLogin,userController.editLoad);
 
-
+user_route.post('/edit',userController.updateProfile);
 
 module.exports = user_route;

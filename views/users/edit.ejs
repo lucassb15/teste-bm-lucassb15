@@ -20,15 +20,33 @@
                 <hr>
             </header>
             <main>
-                
+
                 <section id="section-edit" class="section-container">
                     <div id="user-perfil" class="perfil-box">
-                    <h3 >Olá, <%= user.name %> <%= user.lastName %></h3>
+                        <h3>Olá, <%= user.name %>
+                                <%= user.lastName %>
+                        </h3>
                     </div>
-                    <form action="" method="POST" enctype="multipart/form-data">
+                    <div class="container">
+                        
+                        <form id="edit-form" action="" method="POST" enctype="multipart/form-data">
+                            <input type="hidden" name="_id" value="<%=user._id %>">
+                            <input type="text" name="name" value="<%= user.name %>" placeholder="Enter Name" required>
+                            <br>
+                            <input type="text" name="lastName" value="<%= user.lastName %>" placeholder="Enter Name" required>
+                            <br>
+                            <input type="text" name="birthday" value="<%= user.birthday %>" placeholder="Enter Name" required>
+                            <br>
+                            <select type="text" name="gender" value="<%= user.gender %>" required>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Feminino">Feminino</option>
+                                <option value="Outro">Não informar</option>
+                            </select>
+                            <br>
 
-
-                    </form>
+                            <input class="btn-style" type="submit" value="Salvar alterações">
+                        </form>
+                    </div>
                 </section>
             </main>
             <% include('../layouts/footer.ejs') %>
