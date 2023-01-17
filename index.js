@@ -13,5 +13,5 @@ const userRoute = require('./routes/userRoute')
 app.use('/', userRoute);
 
 app.listen(3000, function () {
-    console.log('Server is running')
+    console.log('Servidor iniciado em: http://localhost:3000');
 })
