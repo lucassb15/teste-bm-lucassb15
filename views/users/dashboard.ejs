@@ -1,7 +1,7 @@
 <% include('../layouts/header.ejs'); %>
     <%- include('../layouts/style.ejs'); %>
         <%- include('../layouts/homestyle.ejs'); %>
-
+            
             <header id="menu">
                 <div class="container">
                     <h1
@@ -44,8 +44,8 @@
                                     <tr>
                                         <td> <%= user[i].name %></td>
                                         <td><%= user[i].email %></td>
-                                        <td><%= user[i].birthday %></td>
-                                        <td>
+                                        <td  class="text-direction"><%= user[i].birthday %></td>
+                                        <td class="align-flex">
                                             <a href="/delete-user?id=<%= user[i]._id %>" class="delete-btn">Excluir</a>
                                             
                                         </td>
@@ -66,4 +66,5 @@
 
                 </section>
             </main>
+            <%- include('../layouts/dataformat.ejs'); %>
             <% include('../layouts/footer.ejs') %>

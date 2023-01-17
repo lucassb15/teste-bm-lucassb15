@@ -84,6 +84,7 @@
       align-items: center;
       margin-top: 5%;
       padding-left: 4rem;
+      
     }
 
     #section-user .user-info-welcome,
@@ -107,7 +108,7 @@
       width: 50%;
     }
   }
-
+  
   /* ===========================================================*/
 
   /* =================== USER EDIT PROFILE =====================*/
@@ -139,7 +140,22 @@
     border-end-end-radius: 1rem;
     border-end-start-radius: 1rem;
   }
-
+  @media (max-width: 767px) {
+    #section-edit.section-container{
+      margin: 0;
+      padding: 0;
+      display: flex;
+      width: 100%;
+      margin-top: 3rem;
+    }
+    #section-edit .container {
+      width: 80%;
+      padding: 2rem;
+    }
+    #user-perfil.perfil-box{
+      width: 80%;
+    }
+  }
   /* ===========================================================*/
 
   /* =================== DASHBOARD =============================*/
@@ -183,11 +199,16 @@
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    width: 45%;
+    width: auto;
     background-color: #303030;
     color: white;
   }
-
+  #section-dashboard .align-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
   #section-dashboard .delete-btn {
     cursor: pointer;
     padding: 1rem;
@@ -198,6 +219,7 @@
     text-align: center;
     transition: .5s;
     border-radius: .2rem;
+    text-align: center;
   }
 
   #section-dashboard .delete-btn:hover {
@@ -210,7 +232,7 @@
       font-size: 18px;
       margin-bottom: 1rem;
     }
-
+    
     #section-dashboard.section-container {
       display: flex;
       margin: 0;
