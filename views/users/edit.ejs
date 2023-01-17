@@ -29,18 +29,18 @@
                     </div>
                     <div class="container">
                         
-                        <form id="edit-form" action="" method="POST" enctype="multipart/form-data">
+                        <form id="edit-form" action="/edit" method="POST">
                             <input type="hidden" name="_id" value="<%=user._id %>">
                             <input type="text" name="name" value="<%= user.name %>" placeholder="Enter Name" required>
                             <br>
                             <input type="text" name="lastName" value="<%= user.lastName %>" placeholder="Enter Name" required>
                             <br>
-                            <input type="text" name="birthday" value="<%= user.birthday %>" placeholder="Enter Name" required>
+                            <input type="date" name="birthday" value="<%= user.birthday %>" placeholder="Enter Name" required>
                             <br>
                             <select type="text" name="gender" value="<%= user.gender %>" required>
-                                <option value="Masculino">Masculino</option>
-                                <option value="Feminino">Feminino</option>
-                                <option value="Outro">Não informar</option>
+                                <option value="Masculino" <%= user.gender == 'Masculino' ? 'selected' : ''%>>Masculino</option>
+                                <option value="Feminino" <%= user.gender == 'Feminino' ? 'selected' : ''%>>Feminino</option>
+                                <option value="Outro" <%= user.gender == 'Outro' ? 'selected' : ''%>>Não informar</option>
                             </select>
                             <br>
 

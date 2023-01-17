@@ -124,10 +124,10 @@ const editLoad = async (req, res) => {
 
         const id = req.query.id;
 
-        const userData = await User.findById({ _id: id });
+        const userData = await User.findById({ _id:id });
 
         if (userData) {
-            res.render('edit', { user: userData });
+            res.render('edit', { user:userData });
         }
         else {
             res.redirect('/home');
