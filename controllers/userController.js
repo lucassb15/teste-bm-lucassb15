@@ -35,15 +35,17 @@ const insertUser = async (req, res) => {
             is_admin: 0,
         });
         const userData = await user.save();
-
+        
         if (userData) {
-            res.render('registration', { message: 'Seu cadastro foi realizado com sucesso! ' })
-
+            res.render('login', { message: 'Seu cadastro foi realizado com sucesso! ' })
         }
         else {
             res.render('registration', { message: 'Seu cadastro falhou! ' })
         }
     } catch (error) {
+        if (error.code === 11000){
+            res.render('registration', { messageEmail: 'O e-mail já está em uso no sistema' })
+        }
         console.log(error.message)
     }
 }
@@ -103,6 +105,7 @@ const loadHome = async (req, res) => {
 
 }
 
+
 const userLogout = async (req, res) => {
 
     try {
@@ -157,6 +160,35 @@ const updateProfile = async (req, res) => {
 
 }
 
+const loadDashboard = async (req, res) => {
+
+    try {
+        
+        const usersData = await User.find({is_admin:0});
+        res.render('dashboard', {user:usersData});
+
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+
+const deleteUser = async (req,res)=>{
+
+    try {
+        
+        const id = req.query.id;
+        await User.findOneAndDelete(id);
+        res.redirect('dashboard');
+       
+    } catch (error) {
+        console.log("Delete user error:  ", error.message)
+    }
+
+}
+
+
+
 module.exports = {
     loadRegister,
     insertUser,
@@ -165,5 +197,7 @@ module.exports = {
     loadHome,
     userLogout,
     editLoad,
-    updateProfile
+    updateProfile,
+    loadDashboard,
+    deleteUser
 }

@@ -11,8 +11,7 @@
                     </h1>
                     <div class="navbar">
                         <ul>
-                            <li><a href="/edit?id=<%=user._id %>">Editar perfil</a> </li>
-                            <li><a href="/userList">Cadastros</a></li>
+                            <li><a href="/home">Home</a> </li>
                             <li><a href="/logout">Logout</a></li>
                         </ul>
                     </div>
@@ -30,7 +29,7 @@
                     <div class="container">
                         
                         <form id="edit-form" action="/edit" method="POST">
-                            <input type="hidden" name="_id" value="<%=user._id %>">
+                            <input type="hidden" name="_id" value="<%= user._id %>">
                             <input type="text" name="name" value="<%= user.name %>" placeholder="Enter Name" required>
                             <br>
                             <input type="text" name="lastName" value="<%= user.lastName %>" placeholder="Enter Name" required>

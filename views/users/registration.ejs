@@ -9,6 +9,11 @@
                             <%= message%>
                         </p>
                         <% } %>
+                        <% if(typeof messageEmail !=='undefined' ){ %>
+                            <p class="alert-msg" style="color: red">
+                                <%= messageEmail%>
+                            </p>
+                            <% } %>
                     <form id="reg-form" method="POST">
                         <div class="container-uinfo">
                             

@@ -41,4 +41,8 @@ user_route.get('/edit',auth.isLogin,userController.editLoad);
 
 user_route.post('/edit',userController.updateProfile);
 
+user_route.get('/dashboard',auth.isLogin,userController.loadDashboard);
+
+user_route.get('/delete-user',userController.deleteUser)
+
 module.exports = user_route;
