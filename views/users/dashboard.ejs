@@ -44,7 +44,7 @@
                                     <tr>
                                         <td> <%= user[i].name %></td>
                                         <td><%= user[i].email %></td>
-                                        <td  class="text-direction"><%= user[i].birthday %></td>
+                                        <td  class="text-direction"><%= new Date().getFullYear() - new Date(user[i].birthday).getFullYear() %></td>
                                         <td class="align-flex">
                                             <a href="/delete-user?id=<%= user[i]._id %>" class="delete-btn">Excluir</a>
                                             
@@ -66,5 +66,5 @@
 
                 </section>
             </main>
-            <%- include('../layouts/dataformat.ejs'); %>
+
             <% include('../layouts/footer.ejs') %>
